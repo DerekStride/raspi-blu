@@ -15,11 +15,10 @@ else:
 
 # search for the SampleServer service
 uuid = "2e417dae-6c5f-476e-bcfb-295d161b5b81"
-puts addr
 
 service_matches = []
 
-while len(service_matches) == 0
+while len(service_matches) == 0:
     service_matches = find_service( uuid = uuid, address = addr )
 
 first_match = service_matches[0]
@@ -35,9 +34,12 @@ sock.connect((host, port))
 
 print("connected.  receiving data.")
 data = ""
-while True:
-    data += sock.recv(1024)
-    if len(data) == 0: break
+try:
+    while True:
+        data += sock.recv(1024)
+        if len(data) == 0: break
+except IOError:
+    pass
 
 print("received [%s]" % data)
 sock.close()
