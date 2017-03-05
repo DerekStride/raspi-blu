@@ -6,8 +6,8 @@ import time
 SSID_PLACEHOLDER = "RASPI_BLU_SSID"
 PSK_PLACEHOLDER = "RASPI_BLU_PSK"
 RASPI_UUID = "2e417dae-6c5f-476e-bcfb-295d161b5b81"
-CONFIG_TEMPLATE = "config/wpa_supplicant.conf"
-CONFIG_BACKUP = "backup/wpa_supplicant.conf"
+CONFIG_TEMPLATE = "/home/pi/raspi-blu/config/wpa_supplicant.conf"
+CONFIG_BACKUP = "/home/pi/raspi-blu/backup/wpa_supplicant.conf"
 CONFIG_DEST = "/etc/wpa_supplicant/wpa_supplicant.conf"
 # CONFIG_DEST = "test/wpa_supplicant.conf"
 
