@@ -35,13 +35,8 @@ sock.connect((host, port))
 print("connected.  receiving data.")
 data = ""
 try:
-    while True:
-        recv = sock.recv(1024)
-        if len(recv) == 0: break
-        print(recv)
-        data += recv
+    data = sock.recv(1024)
 except IOError:
-    print("pass")
     pass
 
 print("received [%s]" % data)
