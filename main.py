@@ -36,8 +36,10 @@ print("connected.  receiving data.")
 data = ""
 try:
     while True:
-        data += sock.recv(1024)
-        if len(data) == 0: break
+        recv = sock.recv(1024)
+        if len(recv) == 0: break
+        print(recv)
+        data += recv
 except IOError:
     pass
 
