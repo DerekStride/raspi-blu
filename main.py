@@ -1,5 +1,7 @@
 from bluetooth import *
 import sys
+import os
+import time
 
 SSID_PLACEHOLDER = "RASPI_BLU_SSID"
 PSK_PLACEHOLDER = "RASPI_BLU_PSK"
@@ -72,3 +74,7 @@ backup = read_config(CONFIG_DEST)
 output = build_config(ssid, psk)
 write_config(CONFIG_BACKUP, backup)
 write_config(CONFIG_DEST, output)
+
+time.sleep(3)
+
+os.system('sudo wpa_cli reconfigure')
