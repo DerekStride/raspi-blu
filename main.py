@@ -41,10 +41,9 @@ try:
         print(recv)
         data += recv
 except IOError:
+    print("pass")
     pass
 
 print("received [%s]" % data)
-sock.close()
-
 ssid, psk = data.split("|")
 print("SSID: %s\nPSK:  %s", ssid, psk)
